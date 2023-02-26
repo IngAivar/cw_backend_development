@@ -10,5 +10,17 @@ def get_data(url):
 
         return None, f"WARNING: Статус ответа {response.status_code}"
 
-    except requests.exceptions.ConnectionError as e:
+    except requests.exceptions.ConnectionError:
         return None, "ERROR: requests.exceptions.ConnectionError"
+
+
+def get_filtered_data(data):
+    data = [x for x in data if "state" in x and x["state"] == "EXECUTED"]
+
+    return data, "INFO: Данные отфильтрованы!"
+
+
+def get_last_data(data, count_last_values):
+    data = sorted(data, key=lambda x: x["date"], reverse=True)
+
+    return data[:count_last_values], "INFO: Данные отсортированы"
