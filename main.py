@@ -14,7 +14,5 @@ def main():
 
     print(info)
 
-    print(data)
-
 
 main()
