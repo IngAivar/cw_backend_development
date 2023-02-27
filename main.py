@@ -1,4 +1,4 @@
-from utils.utils import get_data, get_filtered_data, get_last_data
+from utils.utils import get_data, get_filtered_data, get_last_data, get_formatted_data
 
 
 def main():
@@ -7,6 +7,7 @@ def main():
                      "3d-aad1945e5421&expirationTimestamp=1677598782588&signature=_sYHlRCmRxn3Ydwl9DTuiG" \
                      "_SMFIWMVJ-d34j8CU6FX0&downloadName=operations.json"
     count_last_values = 5
+    filtered_empty_from = True
 
     data, info = get_data(operations_url)
 
@@ -15,7 +16,7 @@ def main():
 
     print(info)
 
-    data, info = get_filtered_data(data)
+    data, info = get_filtered_data(data, filtered_empty_from)
 
     print(info)
 
@@ -23,6 +24,8 @@ def main():
 
     print(info)
 
-    print(data)
+    data, info = get_formatted_data(data)
+
+    print(info)
 
 main()
