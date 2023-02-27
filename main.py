@@ -22,6 +22,7 @@ def main():
     data, info = get_last_data(data, count_last_values)
 
     print(info)
+    print(data)
 
 
 main()
