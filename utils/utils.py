@@ -34,7 +34,7 @@ def get_filtered_data(data, filtered_empty_from=False):
     if filtered_empty_from:
         data = [x for x in data if "from" in x]
 
-    return data, "INFO: Данные отфильтрованы!"
+    return data
 
 
 def get_last_data(data, count_last_values):
@@ -47,7 +47,7 @@ def get_last_data(data, count_last_values):
 
     data = sorted(data, key=lambda x: x["date"], reverse=True)
 
-    return data[:count_last_values], "INFO: Данные отсортированы!"
+    return data[:count_last_values]
 
 
 def get_formatted_data(data):
@@ -66,10 +66,13 @@ def get_formatted_data(data):
 
         description = row["description"]
 
-        sender = row["from"].split()
-        sender_bill = sender.pop(-1)
-        sender_bill = f"{sender_bill[:4]} {sender_bill[4:6]}** **** {sender_bill[-4:]}"
-        sender_info = " ".join(sender)
+        if "from" in row:
+            sender = row["from"].split()
+            sender_bill = sender.pop(-1)
+            sender_bill = f"{sender_bill[:4]} {sender_bill[4:6]}** **** {sender_bill[-4:]}"
+            sender_info = " ".join(sender)
+        else:
+            sender_bill, sender_info = "", "[СКРЫТО]"
 
         recipient = f"**{row['to'][-4:]}"
 
@@ -81,4 +84,4 @@ def get_formatted_data(data):
 {amount}
 """)
 
-    return formatted_data, "INFO: Данные отформатированы!"
+    return formatted_data

@@ -16,9 +16,9 @@ def main():
 
     print(info, end="\n\n")
 
-    data, info = get_filtered_data(data, filtered_empty_from)
-    data, info = get_last_data(data, count_last_values)
-    data, info = get_formatted_data(data)
+    data = get_filtered_data(data, filtered_empty_from)
+    data = get_last_data(data, count_last_values)
+    data = get_formatted_data(data)
 
     for row in data:
         print(row)

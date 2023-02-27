@@ -9,7 +9,7 @@ def test_data():
              'to': 'Счет 35158586384610753655'},
             {'id': 154927927, 'state': 'EXECUTED', 'date': '2019-11-19T09:22:25.899614',
              'operationAmount': {'amount': '30153.72', 'currency': {'name': 'руб.', 'code': 'RUB'}},
-             'description': 'Перевод организации', 'from': 'Maestro 7810846596785568',
+             'description': 'Перевод организации',
              'to': 'Счет 43241152692663622869'},
             {'id': 482520625, 'state': 'EXECUTED', 'date': '2019-11-13T17:38:04.800051',
              'operationAmount': {'amount': '62814.53', 'currency': {'name': 'руб.', 'code': 'RUB'}},
