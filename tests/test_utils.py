@@ -1,5 +1,3 @@
-import pytest
-
 from utils.utils import get_data
 
 
@@ -27,3 +25,5 @@ def test_get_data():
     assert info == "ERROR: requests.exceptions.ConnectionError"
 
 
+def test_get_last_data():
+    pass
