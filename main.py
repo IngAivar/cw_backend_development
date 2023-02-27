@@ -26,6 +26,10 @@ def main():
 
     data, info = get_formatted_data(data)
 
-    print(info)
+    print(info, end="\n\n")
+
+    for row in data:
+        print(row)
+
 
 main()
