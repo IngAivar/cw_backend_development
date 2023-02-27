@@ -14,19 +14,11 @@ def main():
     if not data:
         exit(info)
 
-    print(info)
+    print(info, end="\n\n")
 
     data, info = get_filtered_data(data, filtered_empty_from)
-
-    print(info)
-
     data, info = get_last_data(data, count_last_values)
-
-    print(info)
-
     data, info = get_formatted_data(data)
-
-    print(info, end="\n\n")
 
     for row in data:
         print(row)

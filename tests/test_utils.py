@@ -1,4 +1,4 @@
-from utils.utils import get_data, get_last_data
+from utils.utils import get_data, get_last_data, get_formatted_data
 
 
 def test_get_data():
@@ -27,5 +27,11 @@ def test_get_data():
 
 def test_get_last_data(test_data):
     data = get_last_data(test_data, count_last_values=2)
-    assert data[0][0]['date'] == '2019-12-08T22:46:21.935582'
+    assert data[0][0]['date'] == '2019-12-07T06:17:14.634890'
     assert len(data) == 2
+
+
+def test_get_formatted_data(test_data):
+    data = get_formatted_data(test_data[:1])
+
+    assert data[0] == ["07.12.2019 Перевод организации\nVisa Classic 2842 87** **** 9012 -> **3655\n48150.39 USD\n"]
