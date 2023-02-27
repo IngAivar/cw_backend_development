@@ -23,4 +23,8 @@ def get_filtered_data(data):
 def get_last_data(data, count_last_values):
     data = sorted(data, key=lambda x: x["date"], reverse=True)
 
-    return data[:count_last_values], "INFO: Данные отсортированы"
+    return data[:count_last_values], "INFO: Данные отсортированы!"
+
+
+def get_formatted_data(data):
+    pass
